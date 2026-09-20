@@ -44,19 +44,30 @@ export default function MuhelyPage() {
           {muhely.csomagok.title}
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {muhely.csomagok.items.map((item) => (
-            <Card key={item.id} className="flex flex-col">
-              <h3 className="font-serif-display text-xl text-ink">
-                {item.name}
-              </h3>
-              <p className="mt-2 text-sm text-ink-soft">{item.text}</p>
-              <div className="mt-6">
-                <Button href={item.href} external>
-                  Csatlakozom
-                </Button>
-              </div>
-            </Card>
-          ))}
+          <Card className="flex flex-col">
+            <h3 className="font-serif-display text-xl text-ink">
+              {muhely.csomagok.current.name}
+            </h3>
+            <p className="mt-2 text-sm text-ink-soft">
+              {muhely.csomagok.current.text}
+            </p>
+            <div className="mt-6">
+              <Button href={muhely.csomagok.current.href} external>
+                Csatlakozom
+              </Button>
+            </div>
+          </Card>
+          <Card className="flex flex-col opacity-70">
+            <span className="mb-2 w-fit rounded-full bg-paper-dim px-3 py-1 text-xs font-medium uppercase tracking-wide text-accent-dark">
+              Hamarosan
+            </span>
+            <h3 className="font-serif-display text-xl text-ink">
+              {muhely.csomagok.upcoming.name}
+            </h3>
+            <p className="mt-2 text-sm text-ink-soft">
+              {muhely.csomagok.upcoming.text}
+            </p>
+          </Card>
         </div>
       </Section>
 

@@ -1,4 +1,4 @@
-import { CHECKOUT_ALAP_URL, CHECKOUT_HALADO_URL } from "@/lib/config";
+import { CHECKOUT_ALAP_URL } from "@/lib/config";
 
 export const muhely = {
   header: {
@@ -33,23 +33,19 @@ export const muhely = {
     ],
   },
   csomagok: {
-    title: "Csomagok",
-    items: [
-      {
-        id: "alap",
-        name: "Alap",
-        // TODO: pontos tartalom és ár megadása a tulajdonos részéről
-        text: "TODO: az Alap csomag részletes tartalma és ára.",
-        href: CHECKOUT_ALAP_URL,
-      },
-      {
-        id: "halado",
-        name: "Haladó",
-        // TODO: pontos tartalom és ár megadása a tulajdonos részéről
-        text: "TODO: a Haladó csomag részletes tartalma és ára.",
-        href: CHECKOUT_HALADO_URL,
-      },
-    ],
+    title: "Csomag",
+    // Egyelőre csak az Alap csomag elérhető; a Haladó később indul.
+    current: {
+      id: "alap",
+      name: "Alap",
+      // TODO: pontos tartalom és ár megadása a tulajdonos részéről
+      text: "TODO: az Alap csomag részletes tartalma és ára.",
+      href: CHECKOUT_ALAP_URL,
+    },
+    upcoming: {
+      name: "Haladó",
+      text: "Hamarosan indul.",
+    },
   },
   konzultacio: {
     title: "Konzultáció szabályai",
@@ -70,7 +66,7 @@ export const muhely = {
         answer: "TODO: válasz megadása.",
       },
       {
-        question: "Mi a különbség az Alap és a Haladó csomag között?",
+        question: "Mikor indul a Haladó csomag?",
         // TODO: végleges válasz megadása
         answer: "TODO: válasz megadása.",
       },
