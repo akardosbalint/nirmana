@@ -1,5 +1,6 @@
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
+import { ContactForm } from "@/components/ContactForm";
 import { kapcsolat } from "@/content/kapcsolat";
 import { pageMetadata } from "@/lib/metadata";
 import { CONTACT_EMAIL } from "@/lib/config";
@@ -19,13 +20,20 @@ export default function KapcsolatPage() {
       />
       <Section className="max-w-xl">
         <p className="text-lg text-ink-soft">{kapcsolat.text}</p>
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-base font-medium text-paper hover:bg-accent-dark min-h-12"
-        >
-          {kapcsolat.emailLabel}
-        </a>
-        <p className="mt-3 text-sm text-ink-soft">{CONTACT_EMAIL}</p>
+
+        <div className="mt-8">
+          <ContactForm />
+        </div>
+
+        <p className="mt-8 text-sm text-ink-soft">
+          Vagy írj közvetlenül:{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-medium text-accent-dark hover:underline"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </p>
       </Section>
     </>
   );
