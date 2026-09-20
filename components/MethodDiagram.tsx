@@ -63,7 +63,7 @@ export function MethodDiagram({ className = "" }: { className?: string }) {
       className={`diagram-fade-in ${visible ? "is-visible" : ""} ${className}`}
     >
       <svg
-        viewBox="0 0 440 440"
+        viewBox="0 -30 440 470"
         className="h-auto w-full max-w-md mx-auto"
         aria-hidden="true"
         focusable="false"

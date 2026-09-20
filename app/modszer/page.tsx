@@ -52,13 +52,7 @@ export default function ModszerPage() {
                     {layer.title}
                   </h3>
                   <p className="mt-2 text-ink-soft">{layer.text}</p>
-                  {layer.tagNotes ? (
-                    <ul className="mt-3 space-y-1 text-sm text-ink-soft">
-                      {layer.tagNotes.map((note) => (
-                        <li key={note}>{note}</li>
-                      ))}
-                    </ul>
-                  ) : layer.tags ? (
+                  {layer.tags ? (
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {layer.tags.map((tag) => (
                         <li
@@ -67,6 +61,13 @@ export default function ModszerPage() {
                         >
                           {tag}
                         </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                  {layer.tagNotes ? (
+                    <ul className="mt-3 space-y-1 text-sm text-ink-soft">
+                      {layer.tagNotes.map((note) => (
+                        <li key={note}>{note}</li>
                       ))}
                     </ul>
                   ) : null}
