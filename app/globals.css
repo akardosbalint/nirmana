@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f7f3ec;
+  --color-paper-dim: #efe8dc;
+  --color-ink: #2b2622;
+  --color-ink-soft: #55493f;
+  --color-accent: #9c5934;
+  --color-accent-dark: #7e4527;
+  --color-line: #ded3c2;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-accent: var(--color-accent);
+  --color-accent-dark: var(--color-accent-dark);
+  --color-line: var(--color-line);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.origin-center {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 140s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 100s linear infinite;
+}
+
+.diagram-fade-in {
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.diagram-fade-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
