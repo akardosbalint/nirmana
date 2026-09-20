@@ -19,7 +19,7 @@ export const modszer = {
       id: "hid",
       bridge: true,
       title: "Pránájáma",
-      text: "Légzés, idegrendszer-szabályozás – ez köti össze a testet az elmével.",
+      text: "Híd a Materiális és a Mentális réteg között: légzés, idegrendszer-szabályozás – ez köti össze a testet az elmével.",
     },
     {
       id: "mentalis",
